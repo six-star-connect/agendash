@@ -1,6 +1,13 @@
-# Agendash
+# Agendash-aws
 
 A Dashboard for [Agenda](https://github.com/agenda/agenda).
+
+---
+
+### Credit
+
+- This is forked from [Agendash](https://github.com/agenda/agendash) to add support for AWS Document DB
+- The main code base is all done by the Agendash team, we have only added the AWS Document DB
 
 ---
 
@@ -12,6 +19,7 @@ A Dashboard for [Agenda](https://github.com/agenda/agenda).
 - Requeue a job. Clone the data and run immediately.
 - Delete jobs. Useful for cleaning up old completed jobs.
 - Search jobs by name and metadata. Supports querying by Mongo Object Id.
+- Addeed support for AWS Document DB
 - Pagination
 - Responsive UI
 
