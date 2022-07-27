@@ -79,7 +79,7 @@ const newJob = Vue.component("new-job", {
             </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-info" @click="create()">Create Job</button>
+          <button type="button" class="btn btn-info" data-dismiss="modal" @click="create()">Create Job</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         </div>
       </div>
