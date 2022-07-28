@@ -1,8 +1,8 @@
-const app = Vue.component("app", {
+const agendash = Vue.component("app", {
   data: () => ({
     jobs: [],
     overview: [],
-    refresh: 30,
+    refresh: 0,
     showDetail: false,
     pagenumber: 1,
     showConfirm: false,
@@ -28,6 +28,7 @@ const app = Vue.component("app", {
     loading: false,
     hideSlide: true,
   }),
+ 
   methods: {
     openNav() {
       document.getElementById("mySidebar").style.width = "100%";
@@ -100,7 +101,8 @@ const app = Vue.component("app", {
         this.skip,
         this.refresh,
         this.state,
-        this.object
+        this.object,
+        false
       );
     },
     pagechange(action) {
@@ -130,9 +132,10 @@ const app = Vue.component("app", {
       skip = 0,
       refresh = 30,
       state = "",
-      object
+      object,
+      loading = true
     ) {
-      this.loading = true;
+      this.loading = loading;
       this.pagesize = this.pagesize === 0 ? parseInt(limit) : this.pagesize;
       this.refresh = parseFloat(refresh);
       const url = `api?limit=${limit}&job=${name}&skip=${skip}&property=${property}${
@@ -191,6 +194,14 @@ const app = Vue.component("app", {
         }, 2000);
       }
     },
+  },
+  watch:{
+    refresh: function(val){
+      this.internval = setInterval(() => { this.refreshData() }, this.refresh * 1000);
+    }
+  },
+  mounted() {
+    this.refresh = this.refresh;
   },
   created() {
     return this.fetchData();
