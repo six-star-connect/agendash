@@ -102,7 +102,7 @@ const sidebar = Vue.component("sidebar", {
                     {{type.scheduled}}
                   </div>
                   <div class=" sidebarJobIcon">
-                    <i class="material-icons" title="Scheduled">update</i>
+                    <i class="material-icons" title="Scheduled">schedule</i>
                   </div>
                 </div>  
                 <div class="col-2 mybtn text-primary" @click="searchSpecificJob(type.displayName,'queued')">
@@ -110,7 +110,7 @@ const sidebar = Vue.component("sidebar", {
                     {{type.queued}}
                   </div>
                   <div class=" sidebarJobIcon">
-                    <i class="material-icons" title="Queued">queue_play_next</i>
+                    <i class="material-icons" title="Queued">reorder</i>
                   </div>
                 </div>
                 <div class="col-2 mybtn text-warning" @click="searchSpecificJob(type.displayName,'running')">
@@ -142,7 +142,7 @@ const sidebar = Vue.component("sidebar", {
                     {{type.repeating}}
                   </div>
                   <div class=" sidebarJobIcon">
-                    <i class="material-icons" title="Repeating">restart_alt</i>
+                    <i class="material-icons" title="Repeating">repeat</i>
                   </div>
                 </div>
               </div>
