@@ -73,7 +73,9 @@ const agendash = Vue.component("app", {
         this.search = search
         this.property = property
         this.skip = skip
-        this.refresh = refresh
+        if(refresh !== "" && refresh !== undefined) {
+          this.refresh = refresh
+        }
         this.state = state
         this.object = object ? object : this.object
 
