@@ -35,7 +35,7 @@ const topbar = Vue.component("topbar", {
         this.limit,
         this.skip,
         this.refresh,
-        this.state,
+        this.internalState,
         this.object
       );
     },
