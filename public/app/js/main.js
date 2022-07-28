@@ -1,4 +1,4 @@
-const agendash = Vue.component("app", {
+const main = Vue.component("app", {
   data: () => ({
     jobs: [],
     overview: [],
@@ -64,6 +64,7 @@ const agendash = Vue.component("app", {
       this.showConfirmRequeueMulti = true;
     },
     newJob(data) {
+      console.log('new job')
       this.jobData = data;
       this.showNewJob = true;
     },
@@ -198,7 +199,7 @@ const agendash = Vue.component("app", {
     },
   },
   watch:{
-    refresh: function(val){
+    refresh: function(){
       this.internval = setInterval(() => { this.refreshData() }, this.refresh * 1000);
     }
   },
@@ -215,7 +216,7 @@ const agendash = Vue.component("app", {
         <div class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
           <div class="d-flex">
             <div>
-              <a class="navbar-brand col-sm-10 col-md-10 mr-0 tittle"> Agendash <small>x</small> Six Star Global </a>
+              <a class="navbar-brand col-sm-10 col-md-10 mr-0 tittle"> Agendash</a>
             </div>
             <div class='d-md-none w-50'>
               <div id="mySidebar" class="sidebar-collapse" @click="closeNav()">
@@ -249,7 +250,7 @@ const agendash = Vue.component("app", {
               >
             </sidebar>
           </div>
-          <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4 pt-3 pb-5">
+          <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4 pt-3 pb-5" >
             <div class="col-12">
               <topbar v-on:search-form="searchForm"
               :name='name'
@@ -279,7 +280,7 @@ const agendash = Vue.component("app", {
             </div>
           </main>
       </div>
-      <div class="row bg-dark py-3">
+      <div class="row bg-dark py-3 footer" >
         <div class="col-6 m-auto text-light text-center">
           <small>UI written by <a class="text-light" href="https://www.softwareontheroad.com/about" target="_BLANK">Sam Quinn</a>. Backend by Agenda team. Modified by <a class="text-light" href="https://sixstar.global" target="_BLANK">Six Star Global</a></small>
         </div>

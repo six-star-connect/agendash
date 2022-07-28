@@ -84,13 +84,13 @@ const jobList = Vue.component("job-list", {
   template: `
   <div v-on:sendClean="cleanMulti">
         <div >
-          <div class="d-flex justify-content-end mb-2">
+          <div class="d-flex justify-content-end align-items-center mb-2">
             <span class="mr-2">{{ multijobs.length }} jobs selected</span>
             <button :disabled="!multijobs.length" data-toggle="modal" data-target="#modalRequeueSureMulti" @click="sendQueued" class="btn btn-primary mr-2" data-placement="top" title="Requeue list of selecteds Jobs"> Multiple Requeue </button>
             <button :disabled="!multijobs.length" data-toggle="modal" data-target="#modalDeleteSureMulti" @click="sendDelete" class="btn btn-danger" data-placement="top" title="Delete list of selecteds Jobs"> Multiple Delete </button>
           </div>
         </div>
-
+        
         <table class="table table-striped d-none d-xl-table">
           <thead class="thead-dark">
             <tr>

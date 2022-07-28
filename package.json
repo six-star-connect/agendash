@@ -1,6 +1,6 @@
 {
   "name": "agendash-aws",
-  "version": "3.1.10",
+  "version": "3.1.11",
   "description": "A modern dashboard for Agenda.js with Pagination and Search capabilities with AWS support",
   "main": "app.js",
   "bin": "bin/agendash-standalone.js",

@@ -43,10 +43,15 @@ body {
 }
 
 .sidebar, main {
-  max-height: calc(100vh - 45px);
+  height: 100vh;
+  max-height: calc(100vh - 75px);
   overflow-y: scroll;
 }
-
+.footer{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
 .joblist {
   overflow-y: scroll;
 }

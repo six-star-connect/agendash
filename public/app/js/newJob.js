@@ -4,7 +4,15 @@ const newJob = Vue.component("new-job", {
     jobName: "",
     jobSchedule: "",
     jobRepeatEvery: "",
+    jobPriority: "normal",
     jobData: `{ "name": "Your medatada goes here..." }`,
+    stateobject: [
+      { text: "Highest", value: "highest", class: "" },
+      { text: "High", value: "high", class: "" },
+      { text: "Normal", value: "normal", class: "" },
+      { text: "Low", value: "low", class: "" },
+      { text: "Lowest", value: "lowest", class: "" },
+    ],
   }),
   props: ["job"],
   methods: {
@@ -30,6 +38,7 @@ const newJob = Vue.component("new-job", {
         jobName: this.jobName,
         jobSchedule: this.jobSchedule,
         jobRepeatEvery: this.jobRepeatEvery,
+        jobPriority: this.jobPriority,
         jobData: jobData,
       };
       return axios
@@ -38,7 +47,7 @@ const newJob = Vue.component("new-job", {
         .then((data) => {
           this.$emit("popup-message");
           this.$emit("refresh-data");
-          this.$refs.Close.click();
+          this.$refs.close.click();
           this.clear();
         })
         .catch(console.log);
@@ -51,7 +60,7 @@ const newJob = Vue.component("new-job", {
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Create Job</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" ref="close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -60,6 +69,13 @@ const newJob = Vue.component("new-job", {
               <div class="form-group">
                 <label for="jobname">Job Name</label>
                 <input v-model="jobName"  type="text" class="form-control" id="jobname" aria-describedby="jobname">
+              </div>
+              <div class="form-group">
+                <label for="jobnpriority">Job Priority</label>
+                <select v-model="jobPriority" class="form-control" id="selectStateInput">
+                  <option v-bind:class="option.class" v-for="option in stateobject" v-bind:value="option.value">{{option.text}}</option>
+                </select>
+               
               </div>
               <div class="form-group">
                 <label for="jobSchedule">Job Schedule</label>
