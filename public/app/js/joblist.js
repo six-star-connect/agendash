@@ -232,7 +232,7 @@ const jobList = Vue.component("job-list", {
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
                   <li class="page-item" :class="pagenumber === 1 ? 'disabled': ''"><a class="page-link" @click="$emit('pagechange', 'prev')">Previous</a></li>
-                  <li class="page-item"><a style="cursor:pointer;" class="page-link" @click="$emit('pagechange', 'next')">Next</a></li>
+                  <li class="page-item" :class="pagenumber === totalPages ? 'disabled': ''"><a style="cursor:pointer;" class="page-link" @click="$emit('pagechange', 'next')">Next</a></li>
                 </ul>
               </nav>
             </div>

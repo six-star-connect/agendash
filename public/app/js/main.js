@@ -202,7 +202,7 @@ const app = Vue.component("app", {
         <div class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
           <div class="d-flex">
             <div>
-              <a class="navbar-brand col-sm-10 col-md-10 mr-0 tittle"> Agendash</a>
+              <a class="navbar-brand col-sm-10 col-md-10 mr-0 tittle"> Agendash <small>x</small> Six Star Global </a>
             </div>
             <div class='d-md-none w-50'>
               <div id="mySidebar" class="sidebar-collapse" @click="closeNav()">
@@ -268,7 +268,7 @@ const app = Vue.component("app", {
       </div>
       <div class="row bg-dark py-3">
         <div class="col-6 m-auto text-light text-center">
-          <small>UI written by <a class="text-light" href="https://www.softwareontheroad.com/about" target="_BLANK">Sam Quinn</a>. Backend by Agenda team.</small>
+          <small>UI written by <a class="text-light" href="https://www.softwareontheroad.com/about" target="_BLANK">Sam Quinn</a>. Backend by Agenda team. Modified by <a class="text-light" href="https://sixstar.global" target="_BLANK">Six Star Global</a></small>
         </div>
       </div>
       <job-detail v-if="showDetail" v-bind:job="jobData"></job-detail>

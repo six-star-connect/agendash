@@ -82,7 +82,7 @@ const sidebar = Vue.component("sidebar", {
         <div v-else class="col">
           <div class="row rows-ow" v-for="type in sortedArray">
             <div class="col-12 d-flex mt-4 mybtn" @click="searchSpecificJob(type.displayName,'')">
-              <div class="mr-auto">{{type.displayName}}</div><div class="text-rigth pill-big-own bg-secondary right">{{type.total}}</div>
+              <div class="mr-auto">{{type.displayName}}</div><div class="text-rigth pill-big-own p-2 bg-secondary align-items-center h-100">{{type.total}}</div>
             </div>
             <div class="col-12 p-1">
               <div class="progress">
@@ -94,25 +94,62 @@ const sidebar = Vue.component("sidebar", {
               </div>
             </div>
              <!-- internal list of states  -->
-            <div class="col-12 d-flex px-3 mb-2 mybtn" @click="searchSpecificJob(type.displayName,'scheduled')">
-              <div class="mr-auto">Scheduled: </div><div class="text-rigth">{{type.scheduled}}</div>
-            </div>
-            <div class="col-12 d-flex px-3 mb-2 text-primary mybtn" @click="searchSpecificJob(type.displayName,'queued')">
-              <div class="mr-auto">Queued: </div><div class="text-rigth">{{type.queued}}</div>
-            </div>
-            <div class="col-12 d-flex px-3 mb-2 text-warning mybtn"  @click="searchSpecificJob(type.displayName,'running')">
-              <div class="mr-auto">Running: </div><div class="text-rigth">{{type.running}}</div>
-            </div>
-            <div class="col-12 d-flex px-3 mb-2 text-success mybtn"  @click="searchSpecificJob(type.displayName,'completed')">
-              <div class="mr-auto">Completed: </div><div class="text-rigth">{{type.completed}}</div>
-            </div>
-            <div class="col-12 d-flex px-3 mb-2 text-danger mybtn"  @click="searchSpecificJob(type.displayName,'failed')">
-              <div class="mr-auto">Failed: </div><div class="text-rigth">{{type.failed}}</div>
-            </div>
-            <div class="col-12 d-flex px-3 mb-2 text-info mybtn"  @click="searchSpecificJob(type.displayName,'repeating')">
-              <div class="mr-auto">Repeating: </div><div class="text-rigth">{{type.repeating}}</div>
+
+            <div class="container-fluid">
+              <div class="row" style="flex:1">
+                <div class="col-2 mybtn" @click="searchSpecificJob(type.displayName,'scheduled')">
+                  <div class="sidebarJobIcon">
+                    {{type.scheduled}}
+                  </div>
+                  <div class=" sidebarJobIcon">
+                    <i class="material-icons" title="Scheduled">update</i>
+                  </div>
+                </div>  
+                <div class="col-2 mybtn text-primary" @click="searchSpecificJob(type.displayName,'queued')">
+                  <div class=" sidebarJobIcon">
+                    {{type.queued}}
+                  </div>
+                  <div class=" sidebarJobIcon">
+                    <i class="material-icons" title="Queued">queue_play_next</i>
+                  </div>
+                </div>
+                <div class="col-2 mybtn text-warning" @click="searchSpecificJob(type.displayName,'running')">
+                  <div class=" sidebarJobIcon">
+                    {{type.running}}
+                  </div>
+                  <div class=" sidebarJobIcon">
+                    <i class="material-icons" title="Running">directions_run</i>
+                  </div>
+                </div>
+                <div class="col-2 mybtn text-success" @click="searchSpecificJob(type.displayName,'completed')">
+                  <div class=" sidebarJobIcon">
+                    {{type.completed}}
+                  </div>
+                  <div class=" sidebarJobIcon">
+                    <i class="material-icons" title="Completed">done</i>
+                  </div>
+                </div>
+                <div class="col-2 mybtn text-danger" @click="searchSpecificJob(type.displayName,'failed')">
+                  <div class=" sidebarJobIcon">
+                    {{type.failed}}
+                  </div>
+                  <div class=" sidebarJobIcon">
+                    <i class="material-icons" title="Failed">close</i>
+                  </div>
+                </div>
+                <div class="col-2 mybtn text-info" @click="searchSpecificJob(type.displayName,'repeating')">
+                  <div class=" sidebarJobIcon">
+                    {{type.repeating}}
+                  </div>
+                  <div class=" sidebarJobIcon">
+                    <i class="material-icons" title="Repeating">restart_alt</i>
+                  </div>
+                </div>
+              </div>
             </div>
 
+
+            </div>
           </div>
         </div>
       </div> <!-- row -->
