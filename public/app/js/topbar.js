@@ -8,6 +8,7 @@ const topbar = Vue.component("topbar", {
     skip: 0,
     refresh: 30,
     // state: '',
+    internalState: '',
     object: false,
     stateobject: [
       { text: "All", value: "", class: "" },
@@ -19,6 +20,11 @@ const topbar = Vue.component("topbar", {
       { text: "Repeating", value: "repeating", class: "text-info" },
     ],
   }),
+  watch: {
+    state: function(newState) {
+      this.internalState = newState;
+    }
+  },
   methods: {
     submit() {
       this.$emit(
@@ -78,7 +84,7 @@ const topbar = Vue.component("topbar", {
             <div class="input-group-prepend">
                 <span class="input-group-text"> State </span>
               </div>
-                <select v-model="state" class="form-control" id="selectStateInput">
+                <select v-model="internalState" class="form-control" id="selectStateInput">
                   <option v-bind:class="option.class" v-for="option in stateobject" v-bind:value="option.value">{{option.text}}</option>
                 </select>
           </div>
